@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap');
+
+:root {
+    font-family: 'Rubik', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100vw;
+}
+
+.container .pattern {
+    background: url(../images/pattern-bg.png);
+    background-size: cover;
+    height: 200px;
+}
+
+.container .pattern .search{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container .pattern .search p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+    margin-top: 20px;
+}
+
+
+.container .pattern .search .search-box {
+    width: 400px;
+    height: 45px;
+    margin-top: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.container .pattern .search .search-box input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding-left: 15px;
+    font-size: 1.13rem;
+    font-weight: 500;
+}
+
+.container .pattern .search .search-box input.error{
+    color: red;
+    font-size: 0.8rem;
+}
+
+.container .pattern .search .search-box input::placeholder{
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: lightslategray;
+}
+
+.container .pattern .search .search-box .search-icon{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='14'%3E%3Cpath fill='none' stroke='%23FFF' stroke-width='3' d='M2 1l6 6-6 6'/%3E%3C/svg%3E") ;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45px;
+    height: 45px;
+    background-color: black;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+.container .pattern .search .search-box .search-icon:hover{
+    opacity: 0.7;
+}
+
+.container .info {
+    display: flex;
+    width: 800px;
+    border-radius: 15px;
+    position: absolute;
+    left: calc((100% - 800px)/2);
+    top: 140px;
+    background-color: white;
+    z-index: 1000;
+}
+
+.container .info div{
+    width: 200px;
+    height: 120px;
+    padding: 25px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: hsl(0, 0%, 59%);
+    position: relative;
+}
+
+.container .info div:not(:last-child)::after{
+    content: "";
+    width: 2px;
+    height: 80px;
+    position: absolute;
+    right: 0;
+    top: calc((120px - 80px)/2);
+    background-color: hsl(0, 0%, 80%);
+}
+
+.container .info div span{
+    display: block;
+    padding-top: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: black;
+}
+
+.container #map {
+    height: calc(100vh - 200px);
+}
+
+
+@media screen and ( max-width: 900px) {
+    .container .info {
+        flex-direction: column;
+        align-items: center;
+        width: 250px;
+        left: calc((100% - 250px)/2);
+    }
+
+    .container .info div{
+        height: 90px;
+        width: 220px;
+        padding: 15px;
+    }
+
+    .container .info div:not(:last-child)::after{
+        content: none;
+    }
+}
+
+@media screen and ( max-width: 400px) {
+    .container .pattern .search .search-box {
+        width: 300px;
+    }
+}
